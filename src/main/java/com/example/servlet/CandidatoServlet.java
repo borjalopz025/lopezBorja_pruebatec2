@@ -23,21 +23,21 @@ public class CandidatoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        // Obtiene los parámetros del formulario enviados por el usuario (n
         String nombre = req.getParameter("nombre");
         String apellido = req.getParameter("apellido");
 
-
         try {
-
+            // Llama al controlador para crear un nuevo candidato con los datos proporcionados
             candidatoController.create(nombre, apellido);
 
-            resp.sendRedirect( req.getContextPath() + "/turnos");
+            // Si va bien, redirige al usuario al formulario de turnos
+            resp.sendRedirect(req.getContextPath() + "/turnos");
 
         } catch (Exception e) {
-
-            req.setAttribute("error", e.getMessage());
+            // Si ocurre algún error, muestra un mensaje de error en la página de error
+            req.setAttribute("error", "Ha habido un error: " + e.getMessage());
             req.getRequestDispatcher("/paginaError.jsp").forward(req, resp);
         }
-
     }
 }

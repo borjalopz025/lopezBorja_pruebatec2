@@ -1,20 +1,4 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* formulario */
-
+/* Estilo general para el body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f7fa;
@@ -22,21 +6,38 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     height: 100vh;
+    padding-top: 60px;
 }
 
+/* Estilo para los h1 */
+h1 {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* Estilo para el formulario */
 form {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
 }
 
-
-input[type="text"], input[type="number"], input[type="date"], select {
+/* Estilo para inputs y selects */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -47,13 +48,16 @@ input[type="text"], input[type="number"], input[type="date"], select {
     transition: border-color 0.3s ease;
 }
 
-
-input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+/* Estilo cuando el campo está enfocado */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
     border-color: #4CAF50;
     outline: none;
 }
 
-
+/* Estilo para el botón de envío */
 button[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -65,12 +69,61 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+/* Cambio de color al pasar el ratón sobre el botón */
 button[type="submit"]:hover {
     background-color: #45a049;
 }
 
-
-br {
-    margin-bottom: 10px;
+/* Estilo para el header */
+header {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+/* Estilo para la lista de enlaces en el header */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #333;
+}
+
+/* Estilo para la tabla */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}

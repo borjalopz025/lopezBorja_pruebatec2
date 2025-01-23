@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <h1>Filtro de Trunos</h1>
+    <h1>Filtrar turnos</h1>
 
     <form action="/app/lista" method="post">
 

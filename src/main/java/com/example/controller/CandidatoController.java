@@ -20,19 +20,25 @@ public class CandidatoController {
 
     public void create(String nombre, String apellido) throws ExcepcionPersonalizada {
 
+        // Validación de los parámetros de entrada
         Validaciones.validarString(nombre, "El nombre no puede estar vacío.");
         Validaciones.validarString(apellido, "El apellido no puede estar vacío.");
 
+        // Crea una nueva instancia de Candidato
         Candidato persona = new Candidato();
         persona.setNombre(nombre);
         persona.setApellido(apellido);
+
+        // Guarda el nuevo candidato en la base de datos utilizando el repositorio genérico
         candidatoJPA.createGenerico(persona);
     }
 
     public List<Candidato> listaCandidatos () throws ExcepcionPersonalizada {
 
+        // Recupera la lista de candidatos desde la base de datos
         List<Candidato> candidatos = candidatoJPA.findAllGenerico();
 
+        // Valida que la lista de candidatos no esté vacía
         Validaciones.validarLista(candidatos, "No se encontraron candidatos.");
 
         return candidatos;
